@@ -20,6 +20,9 @@ splitOnce = ((.).(.)) toPair splitOn
 toPair :: [a] -> (a, a)
 toPair [x, y] = (x, y)
 
+pairToList :: (a, a) -> [a]
+pairToList (x, y) = [x, y]
+
 slidingWindow :: Int -> [a] -> [[a]]
 slidingWindow 1 lst = return <$> lst
 slidingWindow n lst = zipWith (:) lst (slidingWindow (n - 1) (drop 1 lst))
@@ -27,3 +30,9 @@ slidingWindow n lst = zipWith (:) lst (slidingWindow (n - 1) (drop 1 lst))
 chunks :: Int -> [a] -> [[a]]
 chunks n [] = []
 chunks n lst = take n lst : chunks n (drop n lst)
+
+takeUntil :: (a -> Bool) -> [a] -> [a]
+takeUntil fn [] = []
+takeUntil fn (x:xs)
+    | fn x = x:takeUntil fn xs
+    | otherwise = [x]
