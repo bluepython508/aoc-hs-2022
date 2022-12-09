@@ -1,6 +1,5 @@
 module Main where
 import Common
-import Control.Arrow
 import Data.Bifunctor
 import Control.Monad.State
 import Data.Set (Set)

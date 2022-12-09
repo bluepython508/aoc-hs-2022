@@ -1,0 +1,60 @@
+cabal-version:      2.4
+name:               aoc2022-hs
+version:            0.1.0.0
+
+author:             Ben Soroos
+maintainer:         ben@soroos.net
+
+executable day1
+    main-is: day1.hs
+    other-modules: Common
+    build-depends:    base ^>=4.16.3.0, text ^>=1.2.5.0
+    default-language: GHC2021
+
+executable day2
+    main-is: day2.hs
+    other-modules: Common
+    build-depends:    base ^>=4.16.3.0, text ^>=1.2.5.0
+    default-language: GHC2021
+
+executable day3
+    main-is: day3.hs
+    other-modules: Common
+    build-depends:    base ^>=4.16.3.0, text ^>=1.2.5.0
+    default-language: GHC2021
+
+executable day4
+    main-is: day4.hs
+    other-modules: Common
+    build-depends:    base ^>=4.16.3.0, text ^>=1.2.5.0
+    default-language: GHC2021
+
+executable day5
+    main-is: day5.hs
+    other-modules: Common
+    build-depends:    base ^>=4.16.3.0, text ^>=1.2.5.0, containers ^>=0.6.5.0, parsec^>=3.1.15.0
+    default-language: GHC2021
+
+executable day6
+    main-is: day6.hs
+    other-modules: Common
+    build-depends:    base ^>=4.16.3.0, text ^>=1.2.5.0
+    default-language: GHC2021
+
+executable day7
+    main-is: day7.hs
+    other-modules: Common
+    build-depends:    base ^>=4.16.3.0, text ^>=1.2.5.0, parsec^>=3.1.15.0
+    default-language: GHC2021
+
+executable day8
+    main-is: day8.hs
+    other-modules: Common
+    build-depends:    base ^>=4.16.3.0, text ^>=1.2.5.0
+    default-language: GHC2021
+
+executable day9
+    main-is: day9.hs
+    other-modules: Common
+    build-depends:    base ^>=4.16.3.0, text ^>=1.2.5.0, mtl ^>=2.2.2, containers ^>= 0.6.5.1
+    default-language: GHC2021

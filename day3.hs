@@ -3,7 +3,6 @@ import Common
 import Control.Arrow
 import Data.Char (ord)
 import Data.List (intersect)
-import Data.Sequence (chunksOf)
 
 main = aoc parse part1 part2
 
