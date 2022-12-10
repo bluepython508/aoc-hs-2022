@@ -1,12 +1,22 @@
+{-# LANGUAGE UndecidableInstances #-}
 module Common where
 import Control.Arrow
 import Data.Bifunctor
 import Control.Monad
 import qualified Data.Text as T
 
-aoc :: Show b => (String -> a) -> (a -> b) -> (a -> b) -> IO ()
+class Printable a where
+    toString :: a -> String
+
+instance {-# OVERLAPPING #-} Printable String where
+    toString = id
+
+instance Show a => Printable a where
+    toString = show
+
+aoc :: Printable b => (String -> a) -> (a -> b) -> (a -> b) -> IO ()
 aoc parse part1 part2 = uncurry (*>)
-    . bimap (putStr . ("Part 1:\n"++) . (++"\n\n") . show) (putStrLn . ("Part 2:\n"++) . show)
+    . bimap (putStr . ("Part 1:\n"++) . (++"\n\n") . toString) (putStrLn . ("Part 2:\n"++) . toString)
     . (part1 &&& part2)
     . parse
     =<< getContents
